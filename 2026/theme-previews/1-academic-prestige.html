@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Theme 1 — Academic Prestige · RICE 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0b2545; --navy-2:#13345f; --gold:#c8a04a; --gold-soft:#e6cf94;
+    --ink:#1a2233; --muted:#5b6678; --paper:#ffffff; --cream:#f7f4ec; --line:#e4ddcd;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Source Sans 3",sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+  .preview-tag{position:fixed;bottom:16px;left:16px;z-index:200;background:var(--navy);color:#fff;font-family:"Source Sans 3";font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;padding:8px 16px;border-radius:999px;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+  h1,h2,h3{font-family:"Playfair Display",serif;color:var(--navy);line-height:1.08;font-weight:600}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 30px}
+
+  header{border-bottom:2px solid var(--gold);background:var(--paper)}
+  .topbar{background:var(--navy);color:#fff;font-size:.82rem}
+  .topbar .wrap{display:flex;justify-content:space-between;padding:8px 30px}
+  .topbar span{opacity:.85;letter-spacing:.03em}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:14px}
+  .crest{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:"Playfair Display";font-weight:700;color:var(--navy);font-size:1.3rem}
+  .brand b{font-family:"Playfair Display";font-size:1.35rem;color:var(--navy);display:block;line-height:1}
+  .brand small{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .menu{display:flex;gap:28px;list-style:none}
+  .menu a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem;letter-spacing:.02em;padding-bottom:4px;border-bottom:2px solid transparent;transition:.25s}
+  .menu a:hover{border-color:var(--gold);color:var(--navy)}
+  .btn{font-family:"Source Sans 3";font-weight:700;text-decoration:none;padding:11px 24px;border-radius:4px;font-size:.9rem;letter-spacing:.03em;display:inline-block;transition:.25s}
+  .btn-gold{background:var(--gold);color:var(--navy)}
+  .btn-gold:hover{background:var(--navy);color:var(--gold-soft)}
+  .btn-out{border:2px solid var(--navy);color:var(--navy);padding:9px 22px}
+  .btn-out:hover{background:var(--navy);color:#fff}
+
+  .hero{background:linear-gradient(160deg,#fff 0%,var(--cream) 100%);padding:72px 0 80px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:36px solid rgba(200,160,74,.1);border-radius:50%}
+  .hero .wrap{display:grid;grid-template-columns:1.3fr .85fr;gap:54px;align-items:center;position:relative;z-index:1}
+  .eyebrow{font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:18px}
+  .eyebrow::before{content:"";display:inline-block;width:36px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+  .hero h1{font-size:clamp(2.4rem,5vw,4rem)}
+  .hero h1 em{font-family:"EB Garamond";font-style:italic;color:var(--gold)}
+  .hero .sub{font-family:"EB Garamond";font-size:1.25rem;color:var(--muted);margin:22px 0 26px;max-width:48ch;line-height:1.6}
+  .meta{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:30px;font-weight:600;font-size:.95rem;color:var(--navy)}
+  .meta div{display:flex;align-items:center;gap:8px}
+  .meta b{color:var(--gold)}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:6px;padding:30px;box-shadow:0 30px 60px -34px rgba(11,37,69,.4)}
+  .card h3{font-size:1.3rem;margin-bottom:4px}
+  .card .place{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+  .card .rule{height:1px;background:var(--line);margin:18px 0}
+  .dates li{list-style:none;display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+  .dates li span:first-child{color:var(--muted)}
+  .dates li span:last-child{font-weight:700;color:var(--navy);font-family:"Playfair Display"}
+
+  .strip{background:var(--navy);color:#fff;padding:42px 0}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+  .strip .n{font-family:"Playfair Display";font-size:2.6rem;color:var(--gold-soft)}
+  .strip .t{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-top:6px}
+  @media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.menu{display:none}.strip .wrap{grid-template-columns:repeat(2,1fr);gap:24px}}
+</style>
+</head>
+<body>
+<div class="preview-tag">Theme 1 — Academic Prestige</div>
+
+<header>
+  <div class="topbar"><div class="wrap"><span>IEEE Technically Sponsored · Conf. Record #71332</span><span>riceconvenor@gmail.com · +91 90074 66285</span></div></div>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="crest">R</div>
+      <div><b>RICE 2026</b><small>Intelligent Computing</small></div>
+    </div>
+    <ul class="menu"><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Call for Papers</a></li><li><a href="#">Committee</a></li><li><a href="#">Register</a></li></ul>
+    <a href="#" class="btn btn-gold">Submit Paper</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">11th International Conference</div>
+      <h1>Research in Intelligent <em>Computing</em> in Engineering</h1>
+      <p class="sub">Gauging the emerging trends in computational methods, data science and machine learning — convening scholars from around the world.</p>
+      <div class="meta">
+        <div><b>◆</b> November 5–6, 2026</div>
+        <div><b>◆</b> Goa, India</div>
+        <div><b>◆</b> Hybrid Mode</div>
+      </div>
+      <div class="cta"><a href="#" class="btn btn-gold">Submit Your Paper</a><a href="#" class="btn btn-out">Registration &amp; Fees</a></div>
+    </div>
+    <div class="card">
+      <h3>Goa Villagio Resort &amp; Spa</h3>
+      <div class="place">Betalbatim, Goa 403713 · India</div>
+      <div class="rule"></div>
+      <ul class="dates">
+        <li><span>Paper Submission</span><span>Jul 15, 2026</span></li>
+        <li><span>Acceptance</span><span>Aug 15, 2026</span></li>
+        <li><span>Camera-Ready</span><span>Sep 15, 2026</span></li>
+        <li><span>Registration</span><span>Sep 15, 2026</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <div><div class="n">11<sup style="font-size:1.1rem">th</sup></div><div class="t">Edition</div></div>
+    <div><div class="n">02</div><div class="t">Days</div></div>
+    <div><div class="n">05</div><div class="t">Keynote Talks</div></div>
+    <div><div class="n">02</div><div class="t">Workshops</div></div>
+  </div>
+</section>
+</body>
+</html>

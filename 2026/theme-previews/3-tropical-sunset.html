@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Theme 3 — Tropical Sunset · RICE 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --magenta:#ff3d77; --orange:#ff8a3d; --gold:#ffd23d; --plum:#3a0e3f;
+    --ink:#2b1430; --muted:#6b5570; --paper:#fff7f0; --card:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Plus Jakarta Sans",sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .preview-tag{position:fixed;bottom:16px;left:16px;z-index:200;background:linear-gradient(135deg,var(--magenta),var(--orange));color:#fff;font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:9px 18px;border-radius:999px;box-shadow:0 10px 30px -8px rgba(255,61,119,.6)}
+  h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.02;letter-spacing:-.02em;font-weight:800}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 30px}
+
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;position:relative;z-index:3}
+  .brand{display:flex;align-items:center;gap:12px;font-family:"Bricolage Grotesque";font-weight:800;font-size:1.3rem;color:#fff}
+  .dot{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.1rem}
+  .menu{display:flex;gap:8px;list-style:none}
+  .menu a{text-decoration:none;color:#fff;font-weight:600;font-size:.92rem;padding:9px 16px;border-radius:999px;transition:.25s;opacity:.92}
+  .menu a:hover{background:rgba(255,255,255,.18)}
+  .btn{font-family:"Plus Jakarta Sans";font-weight:700;text-decoration:none;padding:13px 26px;border-radius:999px;font-size:.92rem;display:inline-block;transition:.3s;cursor:pointer}
+  .btn-white{background:#fff;color:var(--magenta);box-shadow:0 12px 30px -10px rgba(0,0,0,.3)}
+  .btn-white:hover{transform:translateY(-3px) scale(1.02)}
+  .btn-glow{background:linear-gradient(135deg,var(--magenta),var(--orange));color:#fff;box-shadow:0 14px 36px -10px rgba(255,61,119,.7)}
+  .btn-glow:hover{transform:translateY(-3px)}
+  .btn-out{border:2px solid rgba(255,255,255,.6);color:#fff}
+  .btn-out:hover{background:rgba(255,255,255,.15)}
+
+  .hero{position:relative;background:linear-gradient(160deg,var(--magenta) 0%,var(--orange) 55%,var(--gold) 100%);padding-bottom:120px;color:#fff;overflow:hidden}
+  .sun{position:absolute;top:60px;right:8%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#fff5d6 45%,rgba(255,255,255,0) 72%);opacity:.85;animation:pulse 6s ease-in-out infinite}
+  @keyframes pulse{50%{transform:scale(1.08)}}
+  .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.35}
+  .hero-content{position:relative;z-index:2;padding:60px 0 0;text-align:center}
+  .pill{display:inline-block;background:rgba(255,255,255,.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);padding:8px 20px;border-radius:999px;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:26px}
+  .hero h1{font-size:clamp(2.8rem,8vw,6rem);text-shadow:0 6px 30px rgba(58,14,63,.25)}
+  .hero h1 .stroke{-webkit-text-stroke:2px #fff;color:transparent}
+  .hero .sub{font-size:1.25rem;font-weight:500;max-width:54ch;margin:22px auto 30px;opacity:.96}
+  .meta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+  .meta div{background:rgba(255,255,255,.2);backdrop-filter:blur(6px);padding:10px 20px;border-radius:999px;font-weight:700;font-size:.92rem}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .wave{position:absolute;bottom:-2px;left:0;width:100%;line-height:0}
+
+  .chips{margin-top:-70px;position:relative;z-index:3}
+  .chips .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .chip{background:var(--card);border-radius:22px;padding:26px 20px;text-align:center;box-shadow:0 24px 50px -28px rgba(255,61,119,.4)}
+  .chip .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:2.6rem;background:linear-gradient(135deg,var(--magenta),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .chip .t{font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  @media(max-width:860px){.menu{display:none}.chips .wrap{grid-template-columns:repeat(2,1fr)}.sun{opacity:.5;right:-40px}}
+</style>
+</head>
+<body>
+<div class="preview-tag">Theme 3 — Tropical Sunset</div>
+
+<section class="hero">
+  <div class="sun"></div>
+  <div class="blob" style="width:200px;height:200px;background:var(--magenta);top:30%;left:-60px"></div>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot">🌴</span> RICE 2026</div>
+    <ul class="menu"><li><a href="#">About</a></li><li><a href="#">Tracks</a></li><li><a href="#">Speakers</a></li><li><a href="#">Schedule</a></li><li><a href="#">Register</a></li></ul>
+    <a href="#" class="btn btn-white">Submit Paper</a>
+  </div>
+
+  <div class="wrap hero-content">
+    <span class="pill">11th International Conference · Goa</span>
+    <h1>Research in Intelligent<br><span class="stroke">Computing</span> in Engineering</h1>
+    <p class="sub">Two electric days of keynotes, workshops and breakthrough research — by the sea, in the heart of Goa.</p>
+    <div class="meta"><div>📅 Nov 5–6, 2026</div><div>📍 Goa, India</div><div>🌐 Hybrid Mode</div></div>
+    <div class="cta"><a href="#" class="btn btn-glow">Submit Your Paper</a><a href="#" class="btn btn-out">Register Now</a></div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#fff7f0" d="M0,64 C240,120 480,8 720,40 C960,72 1200,128 1440,72 L1440,120 L0,120 Z"/></svg>
+</section>
+
+<section class="chips">
+  <div class="wrap">
+    <div class="chip"><div class="n">11<sup style="font-size:1.1rem">th</sup></div><div class="t">Edition</div></div>
+    <div class="chip"><div class="n">02</div><div class="t">Days</div></div>
+    <div class="chip"><div class="n">05</div><div class="t">Keynote Talks</div></div>
+    <div class="chip"><div class="n">02</div><div class="t">Workshops</div></div>
+  </div>
+</section>
+</body>
+</html>
