@@ -268,6 +268,10 @@ h1,h2,h3,h4,.display{font-family:"Bricolage Grotesque",sans-serif;line-height:1.
 .foot a{text-decoration:none;color:rgba(255,255,255,.75);font-size:.92rem;transition:.2s}
 .foot a:hover{color:#fff}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:46px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-size:.84rem;color:rgba(255,255,255,.6);position:relative;z-index:1}
+.foot-sponsor{margin-top:20px}
+.foot-sponsor .lbl{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:9px}
+.foot-sponsor .badge{display:inline-block;background:#fff;padding:8px 13px;border-radius:9px;line-height:0;box-shadow:var(--shadow-sm)}
+.foot-sponsor .badge img{height:26px;width:auto;display:block}
 
 /* ---------- Reveal ---------- */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
