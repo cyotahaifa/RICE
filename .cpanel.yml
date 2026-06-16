@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home4/ricec7if/public_html
+    - /bin/cp -R index.html $DEPLOYPATH/
+    - /bin/cp -R 2026 $DEPLOYPATH/
