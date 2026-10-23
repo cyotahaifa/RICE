@@ -272,6 +272,24 @@ footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0 0;color:v
   .mast h1 span{color:#000}
 }
 </style>
+<style id="guard">
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea{-webkit-user-select:text;user-select:text}
+@media print{body>*{display:none!important}body::before{content:"Printing of the RICE 2026 programme is not permitted. Please view it online at riceconference.in/2026/programme.html";display:block;padding:40px;font:16px Arial,sans-serif}}
+</style>
+<script>
+(function(){
+  var ok=function(t){return t&&/^(INPUT|TEXTAREA)$/.test(t.tagName)};
+  ['copy','cut','contextmenu','selectstart','dragstart'].forEach(function(ev){
+    document.addEventListener(ev,function(e){if(!ok(e.target)){e.preventDefault();if(ev==='copy'&&e.clipboardData)e.clipboardData.setData('text/plain','');}},true);
+  });
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase(),m=e.ctrlKey||e.metaKey;
+    if((m&&'pscu'.indexOf(k)>-1&&k)||(m&&e.shiftKey&&'ijc'.indexOf(k)>-1&&k)||k==='f12'||(m&&!ok(e.target)&&'ax'.indexOf(k)>-1&&k)){e.preventDefault();e.stopPropagation();}
+  },true);
+  window.print=function(){};
+})();
+</script>
 </head>
 <body>
 
