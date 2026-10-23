@@ -160,6 +160,7 @@ h1,h2,h3,h4,.display{font-family:"Bricolage Grotesque",sans-serif;line-height:1.
 .speaker{display:flex;gap:22px;align-items:center;padding:28px}
 .speaker .avatar{width:94px;height:94px;border-radius:20px;flex-shrink:0;display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:800;font-size:2rem;color:#fff;background:var(--grad-3)}
 .speaker:nth-child(even) .avatar{background:linear-gradient(135deg,var(--orange),var(--gold))}
+.speaker img.avatar{object-fit:cover;object-position:center top;background:#e9edf3}
 .speaker h3{font-size:1.34rem}
 .speaker .role{color:var(--magenta);font-weight:700;font-size:.9rem;margin:4px 0 2px}
 .speaker .aff{color:var(--muted);font-size:.9rem}
