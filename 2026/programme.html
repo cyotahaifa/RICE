@@ -283,10 +283,19 @@ input,textarea{-webkit-user-select:text;user-select:text}
   ['copy','cut','contextmenu','selectstart','dragstart'].forEach(function(ev){
     document.addEventListener(ev,function(e){if(!ok(e.target)){e.preventDefault();if(ev==='copy'&&e.clipboardData)e.clipboardData.setData('text/plain','');}},true);
   });
-  document.addEventListener('keydown',function(e){
-    var k=(e.key||'').toLowerCase(),m=e.ctrlKey||e.metaKey;
-    if((m&&'pscu'.indexOf(k)>-1&&k)||(m&&e.shiftKey&&'ijc'.indexOf(k)>-1&&k)||k==='f12'||(m&&!ok(e.target)&&'ax'.indexOf(k)>-1&&k)){e.preventDefault();e.stopPropagation();}
-  },true);
+  function block(e){
+    var c=(e.code||'').replace('Key',''),k=(c.length===1?c:(e.key||'')).toLowerCase(),m=e.ctrlKey||e.metaKey;
+    if(m&&(k==='p'||e.keyCode===80)||(m&&k&&'scu'.indexOf(k)>-1)||(m&&e.shiftKey&&k&&'ijc'.indexOf(k)>-1)||k==='f12'||(m&&!ok(e.target)&&k&&'ax'.indexOf(k)>-1)){
+      e.preventDefault();e.stopImmediatePropagation();return false;
+    }
+  }
+  window.addEventListener('keydown',block,true);
+  document.addEventListener('keydown',block,true);
+  window.addEventListener('keyup',function(e){if((e.ctrlKey||e.metaKey)&&(e.keyCode===80||e.code==='KeyP'))e.preventDefault();},true);
+  // If a print still starts (browser menu), strip the page for the duration of the print
+  var saved=null;
+  window.addEventListener('beforeprint',function(){if(saved===null){saved=document.body.innerHTML;document.body.innerHTML='<p style="padding:40px;font:16px Arial,sans-serif">Printing of the RICE 2026 programme is not permitted. Please view it online at riceconference.in/2026/programme.html</p>';}});
+  window.addEventListener('afterprint',function(){if(saved!==null){location.reload();}});
   window.print=function(){};
 })();
 </script>
